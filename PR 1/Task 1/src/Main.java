@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -17,6 +18,7 @@ public class Main {
         boolean canBePartitioned = canPartition(arr);
         System.out.println("Can the array be partitioned into two parts with equal sum: " + canBePartitioned);
     }
+
     //task 1
     public static boolean Function1(int[] arr2){
         for (int i = 0; i < arr2.length; i++) {
