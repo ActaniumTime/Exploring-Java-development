@@ -17,7 +17,7 @@ public class Main {
         boolean canBePartitioned = canPartition(arr);
         System.out.println("Can the array be partitioned into two parts with equal sum: " + canBePartitioned);
     }
-
+    //task 1
     public static boolean Function1(int[] arr2){
         for (int i = 0; i < arr2.length; i++) {
             if (i > 0) {
@@ -34,6 +34,7 @@ public class Main {
         return true;
     }
 
+    //task2
     public static void fizzBuzz() {
         for (int i = 1; i <= 100; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
@@ -51,6 +52,7 @@ public class Main {
         }
     }
 
+    //task3
     public static boolean canPartition(int[] nums) {
         int totalSum = 0;
         for (int num : nums) {
