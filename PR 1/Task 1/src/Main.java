@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,14 +10,12 @@ public class Main {
             arr[i] = random.nextInt(100);
         }
         boolean result = Function1(arr);
-        System.out.println("result of operation is : " + result);
+        System.out.println("Result of operation is : " + result);
 
         fizzBuzz();
 
         boolean canBePartitioned = canPartition(arr);
         System.out.println("Can the array be partitioned into two parts with equal sum: " + canBePartitioned);
-
-
     }
 
     public static boolean Function1(int[] arr2){
@@ -29,7 +26,6 @@ public class Main {
             System.out.print(arr2[i]);
         }
         System.out.println("]");
-
         for(int i = 1; i < arr2.length; i++){
             if(arr2[i] < arr2[i-1]){
                 return false;
@@ -57,28 +53,20 @@ public class Main {
 
     public static boolean canPartition(int[] nums) {
         int totalSum = 0;
-
-        // Вычисляем общую сумму массива
         for (int num : nums) {
             totalSum += num;
         }
-
-        // Если сумма нечетная, разделить на две равные части невозможно
         if (totalSum % 2 != 0) {
             return false;
         }
-
         int target = totalSum / 2;
         boolean[] dp = new boolean[target + 1];
-        dp[0] = true; // Сумма 0 всегда достижима (пустое подмножество)
-
-        // Проверяем, можно ли собрать сумму, равную target
+        dp[0] = true;
         for (int num : nums) {
             for (int j = target; j >= num; j--) {
                 dp[j] = dp[j] || dp[j - num];
             }
         }
-
         return dp[target];
     }
 }
