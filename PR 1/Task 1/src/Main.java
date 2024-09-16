@@ -14,6 +14,11 @@ public class Main {
         System.out.println("result of operation is : " + result);
 
         fizzBuzz();
+
+        boolean canBePartitioned = canPartition(arr);
+        System.out.println("Can the array be partitioned into two parts with equal sum: " + canBePartitioned);
+
+
     }
 
     public static boolean Function1(int[] arr2){
@@ -48,5 +53,32 @@ public class Main {
                 System.out.println(i);
             }
         }
+    }
+
+    public static boolean canPartition(int[] nums) {
+        int totalSum = 0;
+
+        // Вычисляем общую сумму массива
+        for (int num : nums) {
+            totalSum += num;
+        }
+
+        // Если сумма нечетная, разделить на две равные части невозможно
+        if (totalSum % 2 != 0) {
+            return false;
+        }
+
+        int target = totalSum / 2;
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true; // Сумма 0 всегда достижима (пустое подмножество)
+
+        // Проверяем, можно ли собрать сумму, равную target
+        for (int num : nums) {
+            for (int j = target; j >= num; j--) {
+                dp[j] = dp[j] || dp[j - num];
+            }
+        }
+
+        return dp[target];
     }
 }
