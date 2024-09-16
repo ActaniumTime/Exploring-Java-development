@@ -12,6 +12,8 @@ public class Main {
         }
         boolean result = Function1(arr);
         System.out.println("result of operation is : " + result);
+
+        fizzBuzz();
     }
 
     public static boolean Function1(int[] arr2){
@@ -31,4 +33,20 @@ public class Main {
         return true;
     }
 
+    public static void fizzBuzz() {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            }
+            else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            }
+            else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+    }
 }
