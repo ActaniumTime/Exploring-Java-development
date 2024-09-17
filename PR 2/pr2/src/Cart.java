@@ -36,7 +36,6 @@ public class Cart {
         }
     }
 
-    // Підрахунок суми цін товарів у кошику
     public float totalPrice() {
         if (isEmpty()) {
             System.out.println("Cart is empty.");
@@ -50,7 +49,6 @@ public class Cart {
         return total;
     }
 
-    // Підвищення цін усіх товарів у кошику на відсоток
     public void increasePrices(float percent) {
         if (isEmpty()) {
             System.out.println("Cart is empty, nothing to increase.");
@@ -63,13 +61,11 @@ public class Cart {
         }
     }
 
-    // Зниження цін усіх товарів у кошику на відсоток
     public void decreasePrices(float percent) {
         if (isEmpty()) {
             System.out.println("Cart is empty, nothing to decrease.");
             return;
         }
-
         for (int i = 0; i <= top; i++) {
             stack[i].decreasePrice(percent);
             System.out.println("Decreased price of " + stack[i].name + " by " + percent + "%");
