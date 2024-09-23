@@ -1,0 +1,118 @@
+Index: pr3/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" default=\"true\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/.idea/misc.xml b/pr3/.idea/misc.xml
+--- a/pr3/.idea/misc.xml	(revision 867f2dce371f550444065d9a4a4d9f1bb7dbe7f3)
++++ b/pr3/.idea/misc.xml	(date 1727129471206)
+@@ -1,6 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" default="true">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: ../PR 1/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"e7b3089f-9c9c-473d-bb9e-77593201cad6\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"customColor\": \"\",\r\n  \"associatedIndex\": 4\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2m7XPNeau69s8EZn0fVHi9pjSnh\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"e7b3089f-9c9c-473d-bb9e-77593201cad6\" name=\"Changes\" comment=\"\" />\r\n      <created>1726428564797</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1726428564797</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../PR 1/.idea/workspace.xml b/../PR 1/.idea/workspace.xml
+--- a/../PR 1/.idea/workspace.xml	(revision 867f2dce371f550444065d9a4a4d9f1bb7dbe7f3)
++++ b/../PR 1/.idea/workspace.xml	(date 1726604484943)
+@@ -7,15 +7,26 @@
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "customColor": "",
+-  "associatedIndex": 4
+-}]]></component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;customColor&quot;: &quot;&quot;,
++  &quot;associatedIndex&quot;: 4
++}</component>
+   <component name="ProjectId" id="2m7XPNeau69s8EZn0fVHi9pjSnh" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "master",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "H:/JetBrains/Projects/PR 2"
++  }
++}]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: ../PR 2/pr2/src/Cart.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Cart {\r\n    private Item[] stack;\r\n    private int top;\r\n    private int maxSize;\r\n\r\n    public Cart(int size) {\r\n        this.maxSize = size;\r\n        this.stack = new Item[size];\r\n        this.top = -1;  // стек спочатку порожній\r\n    }\r\n\r\n    private boolean isFull() {\r\n        return top == maxSize - 1;\r\n    }\r\n\r\n    private boolean isEmpty() {\r\n        return top == -1;\r\n    }\r\n\r\n    public void addItem(Item item) {\r\n        if (isFull()) {\r\n            System.out.println(\"Cart is full, can't add more items.\");\r\n        } else {\r\n            stack[++top] = item;\r\n            System.out.println(\"Added item: \" + item.name + \", Price: $\" + item.price);\r\n        }\r\n    }\r\n\r\n    public Item removeItem() {\r\n        if (isEmpty()) {\r\n            System.out.println(\"Cart is empty, nothing to remove.\");\r\n            return null;\r\n        } else {\r\n            System.out.println(\"Removed item: \" + stack[top].name);\r\n            return stack[top--];\r\n        }\r\n    }\r\n\r\n    public float totalPrice() {\r\n        if (isEmpty()) {\r\n            System.out.println(\"Cart is empty.\");\r\n            return 0;\r\n        }\r\n\r\n        float total = 0;\r\n        for (int i = 0; i <= top; i++) {\r\n            total += stack[i].price;\r\n        }\r\n        return total;\r\n    }\r\n\r\n    public void increasePrices(float percent) {\r\n        if (isEmpty()) {\r\n            System.out.println(\"Cart is empty, nothing to increase.\");\r\n            return;\r\n        }\r\n\r\n        for (int i = 0; i <= top; i++) {\r\n            stack[i].increasePrice(percent);\r\n            System.out.println(\"Increased price of \" + stack[i].name + \" by \" + percent + \"%\");\r\n        }\r\n    }\r\n\r\n    public void decreasePrices(float percent) {\r\n        if (isEmpty()) {\r\n            System.out.println(\"Cart is empty, nothing to decrease.\");\r\n            return;\r\n        }\r\n        for (int i = 0; i <= top; i++) {\r\n            stack[i].decreasePrice(percent);\r\n            System.out.println(\"Decreased price of \" + stack[i].name + \" by \" + percent + \"%\");\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../PR 2/pr2/src/Cart.java b/../PR 2/pr2/src/Cart.java
+--- a/../PR 2/pr2/src/Cart.java	(revision 867f2dce371f550444065d9a4a4d9f1bb7dbe7f3)
++++ b/../PR 2/pr2/src/Cart.java	(date 1726614653535)
+@@ -51,8 +51,8 @@
+ 
+     public void increasePrices(float percent) {
+         if (isEmpty()) {
+-            System.out.println("Cart is empty, nothing to increase.");
+-            return;
++             System.out.println("Cart is empty, nothing to increase.");
++           return;
+         }
+ 
+         for (int i = 0; i <= top; i++) {
+Index: pr3/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"10f55fc6-abf1-4128-b6e7-b7debb0d74c7\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/pr3.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../../PR 1/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../../PR 1/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../../PR 2/pr2/src/Cart.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../../PR 2/pr2/src/Cart.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 8\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2mTyhLdf80JTXUko2OmsG14dMmt\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"SecBranch\",\r\n    \"kotlin-language-version-configured\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"10f55fc6-abf1-4128-b6e7-b7debb0d74c7\" name=\"Changes\" comment=\"\" />\r\n      <created>1727114980635</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1727114980635</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/pr3/.idea/workspace.xml b/pr3/.idea/workspace.xml
+--- a/pr3/.idea/workspace.xml	(revision 867f2dce371f550444065d9a4a4d9f1bb7dbe7f3)
++++ b/pr3/.idea/workspace.xml	(date 1727129423178)
+@@ -4,17 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="10f55fc6-abf1-4128-b6e7-b7debb0d74c7" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/pr3.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../../PR 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PR 1/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../../PR 2/pr2/src/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PR 2/pr2/src/Cart.java" afterDir="false" />
+-    </list>
++    <list default="true" id="10f55fc6-abf1-4128-b6e7-b7debb0d74c7" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -34,8 +24,8 @@
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "SecBranch",
+-    "kotlin-language-version-configured": "true"
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "H:/JetBrains/Projects/PR 3"
+   }
+ }]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

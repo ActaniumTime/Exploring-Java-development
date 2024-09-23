@@ -1,0 +1,225 @@
+Index: pr3/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/src/Main.java b/pr3/src/Main.java
+new file mode 100644
+--- /dev/null	(date 1727129365410)
++++ b/pr3/src/Main.java	(date 1727129365410)
+@@ -0,0 +1,103 @@
++import java.util.ArrayList;
++import java.util.Scanner;
++import java.util.Random;
++
++public class Main {
++    public static void main(String[] args) {
++
++        Scanner in = new Scanner(System.in);
++        Random random = new Random();
++
++
++        //Task 1 (1.1 and 1.2)
++//        int sizeArr = in.nextInt();
++//        float Arr[] = new float[sizeArr];
++//        for (int i = 0; i < sizeArr; i++) {
++//            Arr[i] = -10 + random.nextFloat() * 20;
++//        }
++//
++//        float Min = Arr[0];
++//        for (int i = 1; i < Arr.length; i++) {
++//            if (Arr[i] < Min) {
++//                Min = Arr[i];
++//                continue;
++//            } else
++//                continue;
++//        }
++//
++//        int i1 = -1, i2 = -1;
++//        for (int i = 0; i < Arr.length; i++) {
++//            if (Arr[i] > 0) {
++//                i1 = i;
++//                break;
++//            }
++//        }
++//
++//        for (int i = Arr.length - 1; i >= 0; i--) {
++//            if (Arr[i] > 0) {
++//                i2 = i;
++//                break;
++//            }
++//        }
++//
++//        float sum = 0;
++//        if (i1 != -1 && i2 != -1 && i1 < i2) {
++//            for (int i = i1; i < i2; i++)
++//                sum += Arr[i];
++//            System.out.println("Sum of all elements beetween elements is " + sum);
++//        } else {
++//            System.out.println("Some thing os gone wrong");
++//        }
++
++//        //task 2 (2.1 and 2.2)
++//        int mat[][] = new int[5][5];
++//        for (int i = 0; i < 5; i++) {
++//            for (int j = 0; j < 5; j++) {
++//                mat[i][j] = -10 + random.nextInt(21);
++//            }
++//        }
++//
++//        for (int i = 0; i < 5; i++) {
++//            for (int j = 0; j < 5; j++) {
++//                System.out.println(mat[i][j] + "\t");
++//            }
++//            System.out.println();
++//        }
++//
++//        //sum of all decreased elements in line
++//        for (int i = 0; i < 5; i++) {
++//            boolean hasNegative = false;
++//            int sum = 0;
++//            for (int j = 0; j < 5; j++) {
++//                if (mat[i][j] < 0)
++//                    hasNegative = true;
++//                sum += mat[i][j];
++//            }
++//
++//            if (hasNegative)
++//                System.out.println("Summary of all decreased elements is " + sum);
++//        }
++//
++//        int minEl = Integer.MAX_VALUE;
++//        ArrayList<Integer> minCol = new ArrayList<>();
++//
++//        for (int i = 0; i < 5; i++) {
++//            for (int j = 0; j < 5; j++) {
++//                if (mat[i][j] < minEl)
++//                    minEl = mat[i][j];
++//            }
++//        }
++//
++//        for (int i = 0; i < 5; i++) {
++//            for (int j = 0; j < 5; j++) {
++//                if (mat[i][j] == minEl)
++//                    minCol.add(j);
++//                break;
++//            }
++//        }
++//
++//        System.out.println("Number of all columns with minimal elements");
++//        for (int col : minCol)
++//            System.out.println(col + "");
++    }
++}
+\ No newline at end of file
+Index: pr3/pr3.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/pr3.iml b/pr3/pr3.iml
+new file mode 100644
+--- /dev/null	(date 1727129365409)
++++ b/pr3/pr3.iml	(date 1727129365409)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: pr3/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/.gitignore b/pr3/.gitignore
+new file mode 100644
+--- /dev/null	(date 1727129365401)
++++ b/pr3/.gitignore	(date 1727129365401)
+@@ -0,0 +1,29 @@
++### IntelliJ IDEA ###
++out/
++!**/src/main/**/out/
++!**/src/test/**/out/
++
++### Eclipse ###
++.apt_generated
++.classpath
++.factorypath
++.project
++.settings
++.springBeans
++.sts4-cache
++bin/
++!**/src/main/**/bin/
++!**/src/test/**/bin/
++
++### NetBeans ###
++/nbproject/private/
++/nbbuild/
++/dist/
++/nbdist/
++/.nb-gradle/
++
++### VS Code ###
++.vscode/
++
++### Mac OS ###
++.DS_Store
+\ No newline at end of file
+Index: pr3/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/.idea/.gitignore b/pr3/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1727129365402)
++++ b/pr3/.idea/.gitignore	(date 1727129365402)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: pr3/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/.idea/modules.xml b/pr3/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1727129365408)
++++ b/pr3/.idea/modules.xml	(date 1727129365408)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/pr3.iml" filepath="$PROJECT_DIR$/pr3.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: pr3/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pr3/.idea/vcs.xml b/pr3/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1727129365408)
++++ b/pr3/.idea/vcs.xml	(date 1727129365408)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
